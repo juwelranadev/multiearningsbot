@@ -1,3 +1,4 @@
+
 // Global variables and initialization
 let watchedAdsCount = 0;
 let earnedPoints = 0.00;
@@ -87,12 +88,11 @@ function resetDaily() {
 }
 
 // Watch Ad function
-function watchAd(isRewarded = false) {
+function watchAd() {
   if (watchedAdsCount < maxAdsPerDay && typeof show_9041728 === 'function') {
     show_9041728().then(() => {
       watchedAdsCount++;
-      const pointsEarned = isRewarded ? 0.12 : 0.1;
-      earnedPoints += pointsEarned;
+      earnedPoints += 0.1;
       localStorage.setItem('watchedAdsCount', watchedAdsCount);
       localStorage.setItem('earnedPoints', earnedPoints.toFixed(2));
       updateUI();
